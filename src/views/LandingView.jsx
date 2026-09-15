@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useApp } from '../context/AppContext';
 import AudioWaveform from '../components/AudioWaveform';
+import Brain from '../assets/Brain';
 
 export default function LandingView() {
   const { startNewScreening } = useApp();
@@ -125,7 +126,7 @@ export default function LandingView() {
               {/* 3D Brain Asset */}
               <div className="relative z-10 w-64 h-64 sm:w-72 sm:h-72 flex items-center justify-center">
                 <img
-                  src="https://lh3.googleusercontent.com/aida/AEtjO1VRUGhc_2Mw5cZ2KwaDAMdlOYWvZMG5S30R8d1y_A8SJRzlLy8e9UhKIZFhNE9wWLa54ETLCMKF0Z90qmKrVNoc1jwDGHtplhBiiy3ScwCyULiijqyiAYWSs7ygAgqaq6GrLU1jvpX80E-llICjkSq8Ccf9iz09ewoChAP1MzHnqL2VUuGR-6JMUki8_TM0LmAKCnlh7kcxx00sRoPlfkGTd7AiTFbGhTEOANejXGOAa_fgWt-UydRF0A"
+                  src={Brain}
                   alt="CogniSense 3D Translucent Neural Brain Model"
                   className="w-full h-full object-contain mix-blend-multiply drop-shadow-[0_16px_32px_rgba(83,65,205,0.22)] transition-transform duration-700 hover:scale-105"
                   style={{ maskImage: 'radial-gradient(circle at center, black 65%, transparent 98%)', WebkitMaskImage: 'radial-gradient(circle at center, black 65%, transparent 98%)' }}
