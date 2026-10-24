@@ -4,7 +4,14 @@ import AudioWaveform from '../components/AudioWaveform';
 import BrainImage from '../assets/Brain.png';
 
 export default function LandingView() {
-  const { startNewScreening } = useApp();
+  const { startNewScreening, user, navigate } = useApp();
+  const handleStart = () => {
+    if (user?.isLoggedIn) {
+      startNewScreening();
+    } else {
+      navigate('login');
+    }
+  };
   const [activeDimension, setActiveDimension] = useState('Memory');
 
   const dimensions = [
@@ -55,7 +62,7 @@ export default function LandingView() {
             {/* CTA Buttons */}
             <div className="flex flex-wrap items-center gap-space-sm mb-space-xl w-full sm:w-auto">
               <button
-                onClick={startNewScreening}
+                onClick={handleStart}
                 className="px-space-lg py-3.5 rounded-full bg-primary-container text-on-primary font-label-lg text-label-lg shadow-[0_12px_32px_rgba(108,92,231,0.38)] hover:shadow-[0_16px_40px_rgba(108,92,231,0.5)] hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2 group w-full sm:w-auto"
               >
                 <span>Start a free check-in</span>

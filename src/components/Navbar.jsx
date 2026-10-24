@@ -136,7 +136,7 @@ export default function Navbar() {
                 Log in
               </button>
               <button
-                onClick={() => navigate('screening')}
+                onClick={() => { if (user?.isLoggedIn) { navigate('screening'); } else { navigate('login'); } }}
                 className="px-space-md py-space-xs rounded-full bg-primary-container text-on-primary-container font-label-md text-label-md shadow-[0_8px_24px_rgba(108,92,231,0.3)] hover:shadow-[0_12px_28px_rgba(108,92,231,0.45)] hover:-translate-y-0.5 transition-all flex items-center gap-1.5"
               >
                 <span>Get Started</span>
